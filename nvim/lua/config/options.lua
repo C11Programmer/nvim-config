@@ -24,3 +24,9 @@ vim.opt.clipboard = "unnamedplus"
 
 -- Save undo history
 vim.opt.undofile = true
+
+-- Keep 8 lines of context above/below the cursor when scrolling
+vim.opt.scrolloff = 8
+
+-- Native completion popup: don't auto-select, show docs in a popup, fuzzy-match candidates
+vim.opt.completeopt = "menuone,noselect,popup,fuzzy"

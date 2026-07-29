@@ -2,7 +2,9 @@ return {
   "nvim-treesitter/nvim-treesitter",
   -- Pin to the stable master branch for backward compatibility with configs.lua
   branch = "master",
+  commit = "cf12346a3414fa1b06af75c79faebe7f76df080a",
   build = ":TSUpdate",
+  event = { "BufReadPre", "BufNewFile" },
   config = function()
     -- Fail loudly if the configs module is missing
     local configs = require("nvim-treesitter.configs")
@@ -12,7 +14,7 @@ return {
       sync_install = false,
 
       -- Automatically install missing parsers when entering buffer
-      auto_install = true,
+      auto_install = false,
 
       -- List of parsers to install
       ensure_installed = {
@@ -26,6 +28,8 @@ return {
         "css",
         "markdown",
         "markdown_inline",
+        "hcl",
+        "terraform",
       },
 
       highlight = {

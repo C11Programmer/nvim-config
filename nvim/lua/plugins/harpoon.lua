@@ -2,6 +2,7 @@ return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
   commit = "87b1a3506211538f460786c23f98ec63ad9af4e5",
+  keys = { "<leader>a", "<C-e>", "<leader>1", "<leader>2", "<leader>3", "<leader>4" },
   dependencies = {
     { "nvim-lua/plenary.nvim", commit = "74b06c6c75e4eeb3108ec01852001636d85a932b" },
   },

@@ -1,5 +1,6 @@
 return {
   "ray-x/lsp_signature.nvim",
+  commit = "b7ace9ddb1640ce266012a45a672dfdaedfa5ec6",
   event = "VeryLazy",
   opts = {
     bind = true, -- This is mandatory, otherwise border config won't get registered.

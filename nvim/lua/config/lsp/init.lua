@@ -17,6 +17,11 @@ local on_attach = function(client, bufnr)
   vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, { desc = "LSP: Rename Symbol", buffer = bufnr })
   vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, { desc = "LSP: Signature Help", buffer = bufnr })
 
+  -- Native LSP completion: auto-trigger as you type (Neovim 0.11+)
+  if client:supports_method("textDocument/completion") then
+    vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+  end
+
   -- Hook lsp_signature into this buffer if it's loaded
   local ok, lsp_sig = pcall(require, "lsp_signature")
   if ok then
@@ -40,6 +45,7 @@ local servers = {
   pyright = require("config.lsp.pyright"),
   gopls = require("config.lsp.gopls"),
   ts_ls = require("config.lsp.ts_ls"),
+  terraformls = require("config.lsp.terraform_ls"),
 }
 
 if has_native_lsp then
